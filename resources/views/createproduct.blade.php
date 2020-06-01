@@ -62,6 +62,7 @@
 <div class="flex-center position-ref full-height">
     <div class="content">
         <form method="POST" action="{{ config('app.url')}}/products">
+            @csrf
             <h1> Enter Details to create a product</h1>
             <div class="form-input">
                 <label>Name</label> <input type="text" name="name">
