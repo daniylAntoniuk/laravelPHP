@@ -86,6 +86,8 @@
                         <div class="links">
                             <a href="{{ config('app.url')}}/products/create">Create Product</a>
                             <a href="{{ config('app.url')}}/products">View Products</a>
+                            <a href="{{ config('app.url')}}/category">View Categories</a>
+                            <a href="{{ config('app.url')}}/category/create">Create Categories</a>
                         </div>
                     </div>
                 </div>
