@@ -5,6 +5,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/froala_editor.css">
+    <link rel="stylesheet" href="/css/plugins/emoticons.css">
     <link rel="stylesheet" href="/css/froala_style.css">
     <link rel="stylesheet" href="/css/plugins/code_view.css">
     <link rel="stylesheet" href="/css/plugins/image_manager.css">
@@ -76,6 +77,7 @@
 <script type="text/javascript" src="/js/plugins/align.min.js"></script>
 <script type="text/javascript" src="/js/plugins/code_beautifier.min.js"></script>
 <script type="text/javascript" src="/js/plugins/code_view.min.js"></script>
+<script type="text/javascript" src="/js/plugins/emoticons.min.js"></script>
 <script type="text/javascript" src="/js/plugins/draggable.min.js"></script>
 <script type="text/javascript" src="/js/plugins/image.min.js"></script>
 <script type="text/javascript" src="/js/plugins/image_manager.min.js"></script>

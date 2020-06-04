@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Category;
+use Intervention\Image\ImageManagerStatic as Image;
 class CategoryController extends Controller
 {
     /**
@@ -36,20 +37,24 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-
-
-
-
-        $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
+//        $request->validate([
+//            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+//        ]);
+//        $imageName = time().'.'.$request->image->extension();
+//        //$imageName =uniqid().".jpg";
+////        $image = $request->file('image');
+////        $request->image->resize(120, 120, function ($constraint) {
+////            $constraint->aspectRatio();
+////        });
+//
+//
+//
+//        $request->image->move(public_path('images'), $imageName);
+        $image       = $request->file('image');
         $imageName = time().'.'.$request->image->extension();
-        //$imageName =uniqid().".jpg";
-
-
-
-        $request->image->move(public_path('images'), $imageName);
-
+        $image_resize = Image::make($image->getRealPath());;
+        $image_resize->resize(200, 200);
+        $image_resize->save(public_path('images/' .$imageName));
 
 
 
