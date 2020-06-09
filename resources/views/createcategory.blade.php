@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/css/plugins/table.css">
     <link rel="stylesheet" href="/css/plugins/video.css">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.css">
+
     <!-- Styles -->
     <style>
         html, body {

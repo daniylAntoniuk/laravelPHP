@@ -8,8 +8,20 @@ class Product extends Model
 {
     protected $fillable = [
         'name',
-        'count',
+        'category_id',
         'price',
-        'description',
+        'count',
+        'description'
     ];
+    /**
+     * Get the category that owns the product.
+     */
+    public function category()
+    {
+        return $this->belongsTo(Category::class);//('App\Category', 'foreign_key');
+    }
+    public function productImages()
+    {
+        return $this->hasMany(ProductImage::class);//('App\Product');// Product::class);
+    }
 }

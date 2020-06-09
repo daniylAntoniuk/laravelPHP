@@ -17,7 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::resource('/products', 'ProductController');
+//Route::get('product/{id}','ProductController@getProd');
 Route::resource('/category', 'CategoryController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
+
+
+Route::post('products/upload', 'ProductController@upload');
