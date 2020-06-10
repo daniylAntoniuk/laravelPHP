@@ -320,7 +320,7 @@
                                         <div class="large-5 column">
                                             <div class="xzoom-container">
 
-                                                <img class="xzoom" id="xzoom-default" src={{'/images/'.$product->productImages[0]->name}}  />
+                                                <img class="xzoom" id="xzoom-default" xoriginal={{'/images/'.$product->productImages[0]->name}} src={{'/images/'.$product->productImages[0]->name}}  />
 
                                                 <div class="xzoom-thumbs">
 
