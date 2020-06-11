@@ -72,7 +72,8 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = \App\Product::find($id);
+        return view('changeproduct',  ['product' => $product]);
     }
 
     /**
@@ -82,9 +83,22 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,$id)
     {
-        //
+        $product = \App\Product::find($id);
+        $product->name = $request->get('name');
+        $product->description = $request->get('description');
+        $product->price = $request->get('price');
+        $product->save();
+
+        $listImages=$request-> get("productImages");
+        foreach($listImages as $id)
+        {
+            $pi = ProductImage::find($id);
+            $pi->product_id =  $product->id;
+            $pi->save();
+        }
+        return redirect('/products')->with('success', 'Продукт успішно змінено!');
     }
 
     /**
@@ -95,7 +109,9 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = \App\Product::find($id);
+        $product->delete();
+        return redirect('/products')->with('success', 'Продукт успішно Видалено!');
     }
 
     public function getProd($id)
@@ -107,8 +123,10 @@ class ProductController extends Controller
     {
         $base64_image=$request->get("imageBase64");
         $img_url = Str::uuid().'.jpg';
-        $path = public_path('images/').$img_url;
-        my_image_resize(420,320, $path, $base64_image);
+        $path = public_path('images/105_').$img_url;
+        my_image_resize(105,80, $path, $base64_image);
+        $path = public_path('images/820_').$img_url;
+        my_image_resize(820,620, $path, $base64_image);
 
         $productImage = new ProductImage([
             'name' => $img_url,
@@ -116,7 +134,15 @@ class ProductController extends Controller
         ]);
         $productImage->save();
 
-        return response()->json(['id'=> $productImage->id, 'url'=>'/images/'.$img_url]);
+        return response()->json(['id'=> $productImage->id, 'url'=>'/images/820_'.$img_url]);
+    }
+    public function removeImage($id)
+    {
+
+
+        $productImage = \App\ProductImage::find($id);
+        $productImage->delete();
+        return ("Ok");
     }
 }
 function my_image_resize($width, $height, $path, $data) //32x32

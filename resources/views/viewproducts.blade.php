@@ -36,11 +36,13 @@
             @foreach ($allProducts as $product)
 
                     <div class="card col-md-4 col-sm-6 p-2" style="width: 18rem;">
-                        <img class="card-img-top mt-2" style="border-radius: 10px" src={{'images/'.$product->productImages[0]->name}} alt="Card image cap">
+                        <img class="card-img-top mt-2" style="border-radius: 10px" src={{'images/820_'.$product->productImages[0]->name}} alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">{{ $product->name }}</h5>
                             <p class="card-text">{{ $product->price }}</p>
-                            <a href={{"/products/".$product->id}} class="btn btn-primary">More info</a>
+                            <a href="{{"/products/".$product->id}}" class="btn btn-primary">More info</a>
+                            <a href="{{"/products/change/".$product->id}}" class="btn btn-warning mt-2 mb-2" >Change</a>
+                            <a href="{{"/products/delete/".$product->id}}" class="btn btn-danger">Delete</a>
                         </div>
                     </div>
 

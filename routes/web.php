@@ -23,5 +23,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
-
+Route::get('products/change/{id}', 'ProductController@edit')->middleware('auth');
+Route::get('products/delete/{id}', 'ProductController@destroy')->middleware('auth');
 Route::post('products/upload', 'ProductController@upload');
+Route::get('products/removeImage/{id}', 'ProductController@removeImage')->middleware('auth');
+

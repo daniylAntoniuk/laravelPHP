@@ -305,14 +305,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-5">
-                            <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-                            <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-
-
-
                             <div class="container">
-
-                                <!-- default start -->
                                 <section id="default" class="padding-top0">
                                     <div class="row">
 
@@ -320,12 +313,12 @@
                                         <div class="large-5 column">
                                             <div class="xzoom-container">
 
-                                                <img class="xzoom" id="xzoom-default" xoriginal={{'/images/'.$product->productImages[0]->name}} src={{'/images/'.$product->productImages[0]->name}}  />
+                                                <img class="xzoom" id="xzoom-default" xoriginal={{'/images/820_'.$product->productImages[0]->name}} src={{'/images/820_'.$product->productImages[0]->name}}  />
 
                                                 <div class="xzoom-thumbs">
 
                                                     @foreach ($product->productImages as $image)
-                                                        <a href={{'/images/'.$image->name}} ><img class="xzoom-gallery" style=" object-fit: contain;" width="80" height="80" src={{'/images/'.$image->name}} ></a>
+                                                        <a href={{'/images/820_'.$image->name}} ><img class="xzoom-gallery" style=" object-fit: contain;" width="80" height="80" src={{'/images/820_'.$image->name}} ></a>
                                                     @endforeach
 
 
@@ -338,16 +331,6 @@
                                 </section>
                                 <!-- default end -->
                             </div>
-
-                            <script src='https://code.jquery.com/jquery-2.1.1.js'></script>
-                            <script src='https://unpkg.com/xzoom/dist/xzoom.min.js'></script>
-                            <script src='https://hammerjs.github.io/dist/hammer.min.js'></script>
-                            <script src='https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/js/foundation.min.js'></script>
-
-
-
-
-
                         </div>
                         <div class="col-md-7">
 
@@ -382,20 +365,7 @@
                                                         <option selected="selected" data-sku="YQT71020193" value="19506517377094">Default Title - $20.66 USD</option>
 
                                                     </select>
-                                                    <script>
-                                                        jQuery(function () {
-                                                            jQuery('.swatch :radio').change(function () {
-                                                                var optionIndex = jQuery(this).closest('.swatch').attr('data-option-index');
-                                                                var optionValue = jQuery(this).val();
-                                                                jQuery(this)
-                                                                    .closest('form')
-                                                                    .find('.single-option-selector')
-                                                                    .eq(optionIndex)
-                                                                    .val(optionValue)
-                                                                    .trigger('change');
-                                                            });
-                                                        });
-                                                    </script>
+
                                                 </div>
                                                 <style>
                                                     .product-variant-option .selector-wrapper {
@@ -446,11 +416,11 @@
 
 
 
-
+{{--<script src='https://unpkg.com/xzoom/dist/xzoom.min.js'></script>--}}
 <script>
     (function ($) {
         $(document).ready(function () {
-            $('.xzoom, .xzoom-gallery').xzoom({ zoomWidth: 400, title: true, tint: '#333', Xoffset: 15 });
+            $('.xzoom, .xzoom-gallery').xzoom({ zoomWidth: 300, title: true, tint: '#333', Xoffset: 15 });
             $('.xzoom2, .xzoom-gallery2').xzoom({ position: '#xzoom2-id', tint: '#ffa200' });
             $('.xzoom3, .xzoom-gallery3').xzoom({ position: 'lens', lensShape: 'circle', sourceClass: 'xzoom-hidden' });
             $('.xzoom4, .xzoom-gallery4').xzoom({ tint: '#006699', Xoffset: 15 });
