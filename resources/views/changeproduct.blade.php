@@ -114,7 +114,7 @@
                                     .then((resp) => {
                                         let url = resp.data.url;
                                         let id = resp.data.id;
-                                        images.prepend('<div class="img" style="background-image: url(' + url + ');" rel="' + url + '"><span>remove</span></div>');
+                                        images.prepend('<div class="img" onclick="rmImg('+id+')" style="background-image: url(' + url + ');" rel="' + url + '"><span>remove</span></div>');
                                         images.prepend('<input type="hidden" name="productImages[]" value="' + id + '">');
                                         console.log("Result", resp);
                                     });
