@@ -50,7 +50,7 @@
 
             @endforeach
         </div>
-
+            {{ $allProducts->links() }}
         </div>
 
         <div class="container">
