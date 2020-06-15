@@ -13,7 +13,7 @@ class ProductController extends Controller
 
     public function index()
     {
-        $products = \App\Product::paginate(2);
+        $products = \App\Product::paginate(1);
 
         return view('viewproducts', ['allProducts' => $products]);
     }
@@ -92,12 +92,15 @@ class ProductController extends Controller
         $product->save();
 
         $listImages=$request-> get("productImages");
-        foreach($listImages as $id)
+        if($listImages != null){
+            foreach($listImages as $id)
         {
             $pi = ProductImage::find($id);
             $pi->product_id =  $product->id;
             $pi->save();
         }
+        }
+
         return redirect('/products')->with('success', 'Продукт успішно змінено!');
     }
 

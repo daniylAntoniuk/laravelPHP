@@ -71,7 +71,7 @@
             @foreach ($product->productImages as $image)
 
             $('.images').prepend('<div class="img" onclick="rmImg('+"{{$image->id}}"+')" style="background-image: url(' + "{{'/images/820_'.$image->name}}" + ');" rel="' + "{{'/images/820_'.$image->name}}" + '"><span >remove</span></div>');
-            $('.images').prepend('<input type="hidden" name="productImages[]" value="' + "{{$image->id}}" + '">');
+            {{--$('.images').prepend('<input type="hidden" name="productImages[]" value="' + "{{$image->id}}" + '">');--}}
             @endforeach
         })(jQuery);
     </script>
